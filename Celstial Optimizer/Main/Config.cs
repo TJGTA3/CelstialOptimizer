@@ -40,6 +40,7 @@ namespace Celstial.Main
             ["FPSCapper"] = false,
             ["SeeUsers"] = true,
             ["DisableParticles"] = false,
+            ["CustomCode"] = "00000",
             
         };
         public static void LoadConfig(string filePath)

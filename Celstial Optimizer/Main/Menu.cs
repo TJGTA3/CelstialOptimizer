@@ -3,6 +3,9 @@ using CelestialOptimizer;
 using Celstial.Utils;
 using Photon.Pun;
 using UnityEngine;
+using Assets.Scripts.Network;
+using Photon.Pun;
+using Photon.Realtime;
 
 namespace Celstial.Main
 {
@@ -142,8 +145,43 @@ namespace Celstial.Main
             GuiLib.NewSection("Customization");
             Config.Set("SeeUsers", GuiLib.NewToggle((bool)Config.Get("SeeUsers"), "Show Yourself As Using CO"));
             
+            GuiLib.NewSection("Custom Code Creator");
+            Config.Set("CustomCode", GuiLib.newText("Code: ", Config.Get("CustomCode").ToString()));
+            GuiLib.NewButton("Create Party", CreateCustomParty);
+            
+            
             
             GuiLib.End();
+        }
+
+        static void CreateCustomParty()
+        {
+            
+            if (int.Parse(Config.Get("CustomCode").ToString()) >= 0 &&  int.Parse(Config.Get("CustomCode").ToString()) <= 33332 && RegionManager.Instance.ANOBPOLIFFK != "us")
+            {
+                RegionManager.Instance.ChangeRegion("us");
+            }
+
+            if (int.Parse(Config.Get("CustomCode").ToString()) >= 33333 && int.Parse(Config.Get("CustomCode").ToString()) <= 66665 && RegionManager.Instance.ANOBPOLIFFK != "eu")
+            {
+                RegionManager.Instance.ChangeRegion("eu");
+            }
+            
+            if (int.Parse(Config.Get("CustomCode").ToString()) >= 66666 && int.Parse(Config.Get("CustomCode").ToString()) <= 99999 && RegionManager.Instance.ANOBPOLIFFK != "asia")
+            {
+                Debug.Log(RegionManager.Instance.ANOBPOLIFFK);
+                RegionManager.Instance.ChangeRegion("asia");
+            }
+            
+
+            Entity.prc.enabled = true;
+            PhotonNetwork.CreateRoom(Config.Get("CustomCode").ToString(), new RoomOptions
+            {
+                MaxPlayers = (int)100,
+                PublishUserId = true,
+                IsVisible = false,
+                EmptyRoomTtl = 15,
+            }, TypedLobby.Default, null);
         }
         void AddSkin(string champ)
         {
@@ -213,7 +251,10 @@ namespace Celstial.Main
 
             foreach (var champ in champs)
             {
-                serverUser.Champions.OwnedChampions.Add(champ, new UserChampionData());
+                if (!serverUser.Champions.OwnedChampions.ContainsKey(champ))
+                {
+                    serverUser.Champions.OwnedChampions.Add(champ, new UserChampionData());
+                }
             }
         }
         void Cosmetic()

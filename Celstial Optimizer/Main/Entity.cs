@@ -29,6 +29,7 @@ namespace Celstial.Main
         public static List<Camera> Cameras;
         public static List<TextMeshProUGUI> tmpu;
         public static List<ParticleSystem> ParticleSystems;
+        public static PartyRoomConnector prc;
         
         public void Start()
         {
@@ -215,6 +216,7 @@ namespace Celstial.Main
 
         void Update()
         {
+            
             timer += Time.deltaTime;
             if (timer >= 1.5f)
             {
@@ -230,6 +232,7 @@ namespace Celstial.Main
 
         void Calls()
         {
+            prc = FindObjectOfType<PartyRoomConnector>();
             ParticleSystems = FindObjectsOfType<ParticleSystem>().ToList();
             if ((bool)Config.Get("SeeUsers"))
             {

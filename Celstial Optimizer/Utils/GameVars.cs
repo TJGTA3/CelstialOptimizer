@@ -42,6 +42,7 @@ namespace Celstial.Utils
             { "lol.1v1.weaponskins.melee.pickaxe.christmas_present", "Christmas Present" },
             { "lol.1v1.weaponskins.melee.pickaxe.darkaxe", "Dark Axe" },
             { "lol.1v1.weaponskins.melee.pickaxe.skullaxe", "Skull Axe" },
+            { "lol.1v1.weaponskins.melee.pickaxe.fang", "Fang Pickaxe" },
             { "lol.1v1.weaponskins.melee.pickaxe.spikesaxe", "Spikes Axe" },
             { "lol.1v1.weaponskins.melee.pickaxe.gamelegends_1", "Bugha Pickaxe" },
             { "lol.1v1.weaponskins.melee.pickaxe.gamelegends_2", "Ankle Breaker Pickaxe" },
@@ -59,6 +60,7 @@ namespace Celstial.Utils
             { "lol.1v1.weaponskins.autosniper.cyber", "Clix Auto-Sniper" },
             { "lol.1v1.weaponskins.rpg.cyber", "Terminator RPG" },
             { "lol.1v1.weaponskins.pump_shotgun.dragon", "Killer Shotgun" },
+            
         };
     }
 }
