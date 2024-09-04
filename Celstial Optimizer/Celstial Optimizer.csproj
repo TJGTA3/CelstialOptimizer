@@ -36,6 +36,9 @@
         <Reference Include="1v1">
           <HintPath>D:\Steam\steamapps\common\1v1.LOL\1v1_LOL_Data\Managed\1v1.dll</HintPath>
         </Reference>
+        <Reference Include="MAScripts">
+          <HintPath>..\..\..\..\Steam\steamapps\common\1v1.LOL\Managed\MAScripts.dll</HintPath>
+        </Reference>
         <Reference Include="Newtonsoft.Json">
           <HintPath>D:\Steam\steamapps\common\1v1.LOL\1v1_LOL_Data\Managed\Newtonsoft.Json.dll</HintPath>
         </Reference>

@@ -136,7 +136,7 @@ namespace Celstial.Main
             
             GuiLib.NewSection("Other Optimizations");
             Config.Set("DisableParticles", GuiLib.NewToggle((bool)Config.Get("DisableParticles"), "Disable Skin Particles"));
-            
+            Config.Set("DisableAllAudio", GuiLib.NewToggle((bool)Config.Get("DisableAllAudio"), "Disable All Audio"));
             
             GuiLib.NewSection("FPS Capper");
             Config.Set("FPSCapper", GuiLib.NewToggle((bool)Config.Get("FPSCapper"), "FPS Capper"));

@@ -41,6 +41,7 @@ namespace Celstial.Main
             ["SeeUsers"] = true,
             ["DisableParticles"] = false,
             ["CustomCode"] = "00000",
+            ["DisableAllAudio"] = false,
             
         };
         public static void LoadConfig(string filePath)

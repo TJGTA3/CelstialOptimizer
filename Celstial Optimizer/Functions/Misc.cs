@@ -71,6 +71,14 @@ namespace Celstial.Functions
         
         public void Update()
         {
+            if ((bool)Config.Get("DisableAllAudio"))
+            {
+                foreach (var audio in Entity.audios)
+                {
+                    audio.enabled = false;
+                    audio.gameObject.SetActive(false);
+                }
+            }
             if ((bool)Config.Get("DisableParticles"))
             {
                 foreach (var ps in Entity.ParticleSystems)
